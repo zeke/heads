@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "async": "^2.0.0-rc.6",
-    "got": "^6.3.0"
+    "got": "^6.3.0",
+    "pify": "^2.3.0"
   },
   "devDependencies": {
     "tap-spec": "^4.1.1",

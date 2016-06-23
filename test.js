@@ -8,9 +8,14 @@ const urls = [
 ]
 
 test('heads', function (t) {
+  t.plan(3)
+
   heads(urls, function(err, codes) {
     t.deepEqual(codes, [200, 200, 404, 200], 'returns an array of status codes')
     t.notOk(codes.every(code => code === 200), 'not every code is a 200')
-    t.end()
+  })
+
+  heads(urls).then(function(codes) {
+    t.deepEqual(codes, [200, 200, 404, 200], 'supports promises')
   })
 })

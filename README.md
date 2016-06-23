@@ -18,13 +18,18 @@ const urls = [
   'https://github.com/nonexistent-url'
 ]
 
-heads(urls, function(err, codes) {
-  codes
-  // [200, 200, 404]
+// promise style
+heads(urls)
+  .then(function(codes) {
+   // [200, 200, 404]
+   codes.every(code => code === 200)
+  })
+  .catch(function(err) {
+    // handle error
+  })
 
-  codes.every(code => code === 200)
-  // false
-})
+// callback style
+heads(urls, function(err, codes) { /*...*/ })
 ```
 
 ## Tests

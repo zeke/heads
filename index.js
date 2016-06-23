@@ -1,7 +1,7 @@
 const async = require('async')
 const got = require('got')
 
-module.exports = function(urls, callback) {
+function heads(urls, callback) {
   async.map(urls, get, callback)
 }
 
@@ -14,3 +14,5 @@ function get(url, callback) {
       return callback(null, error.statusCode)
     })
 }
+
+module.exports = require('pify')(heads)
