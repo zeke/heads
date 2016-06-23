@@ -2,6 +2,17 @@
 
 Make parallel HEAD requests for an array of URLs and get back their HTTP status codes.
 
+## Why?
+
+You've got a collection of URLs, and you want to make sure they're all working.
+
+If you just need to check whether a URL is resolving, a `HEAD` request is preferable
+to a `GET` because it only downloads the response headers instead of the whole
+response body.
+
+To keep things snappy, `heads` makes multiple requests in parallel instead of one
+at a time.
+
 ## Installation
 
 ```sh
