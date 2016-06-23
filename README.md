@@ -43,6 +43,7 @@ npm test
 
 - [async](https://github.com/caolan/async): Higher-order functions and common patterns for asynchronous code
 - [got](https://github.com/sindresorhus/got): Simplified HTTP requests
+- [pify](https://github.com/sindresorhus/pify): Promisify a callback-style function
 
 ## Dev Dependencies
 
