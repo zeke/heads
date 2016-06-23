@@ -21,6 +21,8 @@ npm install heads --save
 
 ## Usage
 
+Heads expects an array of URL strings:
+
 ```js
 const heads = require("heads")
 const urls = [
@@ -29,7 +31,6 @@ const urls = [
   'https://github.com/nonexistent-url'
 ]
 
-// promise style
 heads(urls)
   .then(function(codes) {
    // [200, 200, 404]
@@ -38,9 +39,18 @@ heads(urls)
   .catch(function(err) {
     // handle error
   })
+```
 
-// callback style
+Node-style callbacks are supported too:
+
+```js
 heads(urls, function(err, codes) { /*...*/ })
+```
+
+If you just need to look up one URL, pass it as an argument instead of an array:
+
+```js
+heads('http://mysite.com').then(...)
 ```
 
 ## Tests

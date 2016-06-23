@@ -8,7 +8,7 @@ const urls = [
 ]
 
 test('heads', function (t) {
-  t.plan(3)
+  t.plan(4)
 
   heads(urls, function(err, codes) {
     t.deepEqual(codes, [200, 200, 404, 200], 'returns an array of status codes')
@@ -17,5 +17,9 @@ test('heads', function (t) {
 
   heads(urls).then(function(codes) {
     t.deepEqual(codes, [200, 200, 404, 200], 'supports promises')
+  })
+
+  heads(urls[0]).then(function(codes) {
+    t.deepEqual(codes, 200, 'allows a single URL to be passed')
   })
 })
