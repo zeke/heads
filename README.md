@@ -1,4 +1,4 @@
-# heads
+# heads [![Build Status](https://travis-ci.org/zeke/heads.svg?branch=master)](https://travis-ci.org/zeke/heads)
 
 Make parallel HEAD requests for an array of URLs and get back their HTTP status codes.
 
