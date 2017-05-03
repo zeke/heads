@@ -41,6 +41,19 @@ heads(urls)
   })
 ```
 
+### heads(urls, [options])
+
+##### urls
+
+Type: `string`, `array`
+
+The URL(s) to check.
+
+##### options
+
+See the [`got`](https://github.com/sindresorhus/got) options.
+
+
 Node-style callbacks are supported too:
 
 ```js
